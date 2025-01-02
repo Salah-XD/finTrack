@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const Adminsidebar = () => {
+const Adminsidebar = ({ children }) => {
   const [open, setOpen] = useState(true);
 
   const Menus = [
@@ -14,9 +14,8 @@ const Adminsidebar = () => {
     phone: "9940062385",
   };
 
-  const location = useLocation(); // Hook to get current route
-
-  const zoomLevel = 1.4; // Equivalent to clicking "Zoom In" 4 times
+  const location = useLocation();
+  const zoomLevel = 1.2;
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -100,6 +99,11 @@ const Adminsidebar = () => {
             ))}
           </ul>
         </div>
+      </div>
+
+      {/* Main Content Area */}
+      <div className="flex-1 p-7 overflow-y-auto">
+        {children}
       </div>
     </div>
   );

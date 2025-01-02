@@ -46,7 +46,7 @@ const Adminlogin = () => {
         localStorage.setItem("token", response.data.token); // Save token to local storage
         console.log("Token after login:", response.data.token); // Log token for debugging
 
-        navigate("/admin-sidebar"); // Navigate to /admin-sidebar
+        navigate("/all-users"); // Navigate to /admin-sidebar
       }
     } catch (err) {
       setError(

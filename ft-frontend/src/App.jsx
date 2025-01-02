@@ -83,16 +83,33 @@ const App = () => {
         <Route path="/userbalance" element={<UserBalance />} />
         <Route path="/ownerpassword" element={<OwnerPassword />} />
         <Route path="/adminlogin" element={<Adminlogin />} />
-        <Route path="/pending" element={<Pending />} />
+        
         <Route path="/admin" element={<Admin />} />
-        <Route path="/all-users" element={<Allusers />} />
-        <Route path="/admin-sidebar" element={<Adminsidebar />} />
+        
+        {/* <Route path="/admin-sidebar" element={<Adminsidebar />} /> */}
         {/* <Route path="/controlpannel" element={<OwnerDashboard />} /> */}
         <Route path="/sendlink" element={<SendResetLink />} />
         <Route path="/resetpassword" element={<RestPassword />} />
-        <Route path = "/ownersendlink" element ={<OwnerResetLink/>}/>
-        <Route path ="/ownerresetpassword" element = {<OwnerPassword/>}/>
+        <Route path="/ownersendlink" element={<OwnerResetLink />} />
+        <Route path="/ownerresetpassword" element={<OwnerPassword />} />
 
+
+        <Route
+          path="/all-users"
+          element={
+            <Adminsidebar>
+              <Allusers />
+            </Adminsidebar>
+          }
+        />
+        <Route
+          path="/pending"
+          element={
+            <Adminsidebar>
+              <Pending />
+            </Adminsidebar>
+          }
+        />
         {/* Routes with Sidebar */}
         <Route
           path="/transactions"
